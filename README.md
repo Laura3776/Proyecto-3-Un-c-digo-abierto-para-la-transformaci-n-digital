@@ -155,6 +155,7 @@ Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/
 ## Documentation
  
 - **Functional documentation:** `DOCUMENTATION/documentacion.html` — open in browser
+- **API Reference (auto-generated):** `DOCUMENTATION/api-reference.html`
 - **Developer wiki:** [GitHub Wiki](https://github.com/Laura3776/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/wiki)
 - **Contributing guide:** [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Strategic analysis:** [preguntas.md](preguntas.md)
