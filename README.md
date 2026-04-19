@@ -140,6 +140,7 @@ Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/
 ├── pages/
 │   └── equipo.html             # Team and project info page
 ├── DOCUMENTATION/
+│   ├── api-reference.html      # API Reference
 │   ├── documentacion.html      # Full functional + academic documentation
 │   ├── styles.css              # Documentation styles
 │   └── app.js                  # Documentation tab/TOC logic
