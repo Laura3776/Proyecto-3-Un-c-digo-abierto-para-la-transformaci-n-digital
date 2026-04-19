@@ -1,4 +1,5 @@
 # SmartLog Monitor
+**Live demo:** https://laura3776.github.io/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/
  
 > Open-source incident management system for IT and OT environments — with full traceability, role-based access control, and operational dashboards.
  
