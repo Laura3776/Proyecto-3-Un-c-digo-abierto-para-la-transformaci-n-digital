@@ -1,11 +1,12 @@
 # SmartLog Monitor
-**Live demo:** https://laura3776.github.io/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/
  
 > Open-source incident management system for IT and OT environments — with full traceability, role-based access control, and operational dashboards.
  
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Laura3776/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/blob/main/LICENSE)
 [![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen.svg)](https://github.com/Laura3776/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital)
 [![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-orange.svg)](https://github.com/Laura3776/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/releases/tag/v1.0.0)
+ 
+ **Live demo:** https://laura3776.github.io/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/
  
 ---
  
@@ -47,8 +48,8 @@ The project also serves as a practical reference for digital transformation conc
 ### Option 1 — Open directly in browser
  
 ```bash
-git clone https://github.com/Laura3776/Proyecto-2-Un-software-para-la-transformaci-n-digital.git
-cd Proyecto-2-Un-software-para-la-transformaci-n-digital
+git clone https://github.com/Laura3776/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital.git
+cd Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital
 # Open index.html in your browser
 ```
  
@@ -124,7 +125,7 @@ npx serve .
 ## Repository Structure
  
 ```
-smartlog-monitor/
+Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/
 ├── config/
 │   ├── incidents_seed.json     # Sample incidents (seed data)
 │   ├── policies.json           # Role definitions and permissions
@@ -144,6 +145,8 @@ smartlog-monitor/
 │   └── app.js                  # Documentation tab/TOC logic
 ├── README.md
 ├── CONTRIBUTING.md
+├── preguntas.md
+├── LICENSE
 └── index.html                  # Application entry point
 ```
  
@@ -151,14 +154,10 @@ smartlog-monitor/
  
 ## Documentation
  
-Full functional and technical documentation is available at:
- 
-```
-DOCUMENTATION/documentacion.html
-```
- 
-Open it in a browser (no server needed) for the complete developer and user guide with tabbed navigation.
- 
+- **Functional documentation:** `DOCUMENTATION/documentacion.html` — open in browser
+- **Developer wiki:** [GitHub Wiki](https://github.com/Laura3776/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/wiki)
+- **Contributing guide:** [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Strategic analysis:** [preguntas.md](preguntas.md)
 ---
  
 ## Roadmap
@@ -186,10 +185,4 @@ This project is distributed under the [MIT License](LICENSE). You are free to us
  
 ## Academic Context
  
-Developed as part of **Project 2 & 3 — Software for Digital Transformation**, a practical assignment focused on:
- 
-- Data lifecycle management
-- Role-based security (RBAC)
-- IT/OT integration
-- Digital Enabling Technologies (DHT)
-- Open-source software practices
+Developed as part of **Project 3 — Open Source Code for Digital Transformation**, building on the software created in Project 2. The project applies open-source best practices including full documentation, contribution guidelines, semantic versioning, and a public wiki.
