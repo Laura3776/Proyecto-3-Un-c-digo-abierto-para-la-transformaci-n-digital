@@ -2,9 +2,9 @@
  
 > Open-source incident management system for IT and OT environments — with full traceability, role-based access control, and operational dashboards.
  
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
-[![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-orange.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Laura3776/Proyecto-2-Un-software-para-la-transformaci-n-digital/blob/main/LICENSE)
+[![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen.svg)](https://github.com/Laura3776/Proyecto-2-Un-software-para-la-transformaci-n-digital)
+[![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-orange.svg)](https://github.com/Laura3776/Proyecto-2-Un-software-para-la-transformaci-n-digital/releases/tag/v1.0.0)
  
 ---
  
