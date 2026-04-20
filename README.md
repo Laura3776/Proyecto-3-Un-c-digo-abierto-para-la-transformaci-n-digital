@@ -160,6 +160,7 @@ Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/
 - **Developer wiki:** [GitHub Wiki](https://github.com/Laura3776/Proyecto-3-Un-c-digo-abierto-para-la-transformaci-n-digital/wiki)
 - **Contributing guide:** [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Strategic analysis:** [preguntas.md](preguntas.md)
+- **Devlog (LinkedIn):** https://www.linkedin.com/posts/laura-s%C3%A1nchez-manzanares-3b97b6404_smartlog-monitor-from-classroom-project-share-7451963957751304193-UIL4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGdYeb0BpOWMsTc67cgJ2XQPXRNsSNeH91A
 ---
  
 ## Roadmap
