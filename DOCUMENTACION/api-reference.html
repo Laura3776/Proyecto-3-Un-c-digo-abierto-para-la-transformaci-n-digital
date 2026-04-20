@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Reference | SmartLog Monitor</title>
+  <meta name="description" content="Auto-generated API reference for SmartLog Monitor JavaScript modules.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+ 
+<header class="site-header">
+  <div class="header-left">
+    <div class="logo">SmartLog<span class="logo-sep">/</span><span class="logo-sub">Monitor</span></div>
+    <span class="header-badge">API Reference v1.0.0</span>
+  </div>
+  <nav class="header-nav">
+    <a href="#module-storage">storage</a>
+    <a href="#module-validation">validation</a>
+    <a href="#module-main">main</a>
+    <a href="#module-docs-app">docs/app</a>
+  </nav>
+</header>
+ 
+<div class="layout">
+ 
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">Modules</div>
+ 
+      <a class="sidebar-module" href="#module-storage">storage</a>
+      <a class="sidebar-fn" href="#fn-loadIncidents">loadIncidents()</a>
+      <a class="sidebar-fn" href="#fn-saveIncidents">saveIncidents()</a>
+      <a class="sidebar-fn" href="#fn-clearIncidents">clearIncidents()</a>
+      <a class="sidebar-fn" href="#fn-exportIncidents">exportIncidents()</a>
+      <a class="sidebar-fn" href="#fn-importIncidentsFromText">importIncidentsFromText()</a>
+ 
+      <a class="sidebar-module" href="#module-validation">validation</a>
+      <a class="sidebar-fn" href="#fn-validateIncidentInput">validateIncidentInput()</a>
+      <a class="sidebar-fn" href="#fn-normalizeImportedIncident">normalizeImportedIncident()</a>
+ 
+      <a class="sidebar-module" href="#module-main">main</a>
+      <a class="sidebar-fn" href="#fn-menuToggle">menu toggle</a>
+      <a class="sidebar-fn" href="#fn-copyButtons">copy buttons</a>
+ 
+      <a class="sidebar-module" href="#module-docs-app">docs/app</a>
+      <a class="sidebar-fn" href="#fn-buildToc">buildToc()</a>
+      <a class="sidebar-fn" href="#fn-applyTab">applyTab()</a>
+      <a class="sidebar-fn" href="#fn-setActiveLink">setActiveLink()</a>
+    </div>
+  </aside>
+ 
+  <!-- MAIN -->
+  <main class="main">
+ 
+    <!-- INTRO -->
+    <div class="intro">
+      <div class="generated-label">Auto-generated from JSDoc — SmartLog Monitor v1.0.0</div>
+      <h1>API Reference</h1>
+      <p>Complete documentation for all JavaScript modules in SmartLog Monitor, generated from inline JSDoc comments.</p>
+ 
+      <div class="module-index">
+        <a class="module-card" href="#module-storage">
+          <div class="module-card-name">storage.js</div>
+          <p class="module-card-desc">Persistence layer — localStorage read/write</p>
+        </a>
+        <a class="module-card" href="#module-validation">
+          <div class="module-card-name">validation.js</div>
+          <p class="module-card-desc">Input validation and normalization rules</p>
+        </a>
+        <a class="module-card" href="#module-main">
+          <div class="module-card-name">main.js</div>
+          <p class="module-card-desc">UI utilities — nav toggle, clipboard</p>
+        </a>
+        <a class="module-card" href="#module-docs-app">
+          <div class="module-card-name">docs/app.js</div>
+          <p class="module-card-desc">Documentation TOC controller</p>
+        </a>
+      </div>
+    </div>
+ 
+    <!-- MODULE: storage -->
+    <section class="module-section" id="module-storage">
+      <div class="module-header">
+        <div class="module-icon">STO</div>
+        <div class="module-title">
+          <h2>storage</h2>
+          <p>Persistence layer for SmartLog Monitor. Handles all read/write operations to localStorage. Replace the implementation of each function with API calls to migrate to a backend.</p>
+          <span class="module-path">scripts/storage.js</span>
+        </div>
+      </div>
+ 
+      <div class="block-label" style="margin-bottom:10px">Constants</div>
+      <div class="const-entry">
+        <div class="const-name">STORAGE_KEY</div>
+        <div class="const-type">string</div>
+        <div class="const-desc">localStorage key used to store the incidents array. Value: <code>"smartlog_incidents_v1"</code></div>
+      </div>
+ 
+      <div style="height:20px"></div>
+      <div class="block-label" style="margin-bottom:12px">Functions</div>
+ 
+      <div class="fn-entry" id="fn-loadIncidents">
+        <div class="fn-header">
+          <span class="fn-badge exported">export</span>
+          <span class="fn-name">loadIncidents</span>
+          <span class="fn-signature">() → Array&lt;Object&gt;</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Loads all incidents from localStorage. Returns an empty array if storage is empty or if JSON parsing fails.</p>
+          <div class="returns-block">
+            <div class="block-label">Returns</div>
+            <div class="returns-row">
+              <div class="returns-type">Array&lt;Object&gt;</div>
+              <div class="returns-desc">Array of incident objects. Empty array on error or no data.</div>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="block-label">Example</div>
+            <pre><code>const incidents = loadIncidents();
+console.log(incidents.length); // 12</code></pre>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="fn-entry" id="fn-saveIncidents">
+        <div class="fn-header">
+          <span class="fn-badge exported">export</span>
+          <span class="fn-name">saveIncidents</span>
+          <span class="fn-signature">(incidents: Array&lt;Object&gt;) → void</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Persists the full incidents array to localStorage. Overwrites any previously stored data.</p>
+          <div class="params-block">
+            <div class="block-label">Parameters</div>
+            <div class="param-row">
+              <div class="param-name">incidents</div>
+              <div class="param-type">Array&lt;Object&gt;</div>
+              <div class="param-desc">The complete list of incident objects to save.</div>
+            </div>
+          </div>
+          <div class="returns-block">
+            <div class="block-label">Returns</div>
+            <div class="returns-row">
+              <div class="returns-type">void</div>
+              <div class="returns-desc">—</div>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="block-label">Example</div>
+            <pre><code>saveIncidents(updatedIncidents);</code></pre>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="fn-entry" id="fn-clearIncidents">
+        <div class="fn-header">
+          <span class="fn-badge exported">export</span>
+          <span class="fn-name">clearIncidents</span>
+          <span class="fn-signature">() → void</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Removes all incidents from localStorage. This is a destructive admin action and cannot be undone.</p>
+          <div class="returns-block">
+            <div class="block-label">Returns</div>
+            <div class="returns-row">
+              <div class="returns-type">void</div>
+              <div class="returns-desc">—</div>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="block-label">Example</div>
+            <pre><code>clearIncidents(); // all incident data is deleted</code></pre>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="fn-entry" id="fn-exportIncidents">
+        <div class="fn-header">
+          <span class="fn-badge exported">export</span>
+          <span class="fn-name">exportIncidents</span>
+          <span class="fn-signature">(incidents: Array&lt;Object&gt;) → string</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Serializes an array of incidents into a JSON string with version metadata. Suitable for file download or clipboard copy.</p>
+          <div class="params-block">
+            <div class="block-label">Parameters</div>
+            <div class="param-row">
+              <div class="param-name">incidents</div>
+              <div class="param-type">Array&lt;Object&gt;</div>
+              <div class="param-desc">The incidents to export.</div>
+            </div>
+          </div>
+          <div class="returns-block">
+            <div class="block-label">Returns</div>
+            <div class="returns-row">
+              <div class="returns-type">string</div>
+              <div class="returns-desc">Pretty-printed JSON with version, timestamp, and incidents array.</div>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="block-label">Example</div>
+            <pre><code>const json = exportIncidents(incidents);
+// {"version":1,"generatedAt":"2026-02-24T10:00:00.000Z","incidents":[...]}</code></pre>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="fn-entry" id="fn-importIncidentsFromText">
+        <div class="fn-header">
+          <span class="fn-badge exported">export</span>
+          <span class="fn-name">importIncidentsFromText</span>
+          <span class="fn-signature">(text: string) → Array&lt;Object&gt;</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Parses an exported JSON string and returns the incidents array. Expects the format produced by <code>exportIncidents()</code>.</p>
+          <div class="params-block">
+            <div class="block-label">Parameters</div>
+            <div class="param-row">
+              <div class="param-name">text</div>
+              <div class="param-type">string</div>
+              <div class="param-desc">JSON string containing a <code>&#123; version, generatedAt, incidents &#125;</code> object.</div>
+            </div>
+          </div>
+          <div class="returns-block">
+            <div class="block-label">Returns</div>
+            <div class="returns-row">
+              <div class="returns-type">Array&lt;Object&gt;</div>
+              <div class="returns-desc">Parsed array of incident objects.</div>
+            </div>
+          </div>
+          <div class="throws-block">
+            <div class="block-label">Throws</div>
+            <div class="throws-row">
+              <div class="throws-type">Error</div>
+              <div class="throws-desc">If the JSON is malformed or the <code>incidents</code> array is missing.</div>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="block-label">Example</div>
+            <pre><code>const incidents = importIncidentsFromText(jsonString);</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <div class="section-divider"></div>
+ 
+    <!-- MODULE: validation -->
+    <section class="module-section" id="module-validation">
+      <div class="module-header">
+        <div class="module-icon">VAL</div>
+        <div class="module-title">
+          <h2>validation</h2>
+          <p>Input validation and normalization for SmartLog Monitor. All business rules for incident data live here. No validation logic should exist outside this module.</p>
+          <span class="module-path">scripts/validation.js</span>
+        </div>
+      </div>
+ 
+      <div class="block-label" style="margin-bottom:10px">Constants</div>
+      <div class="const-entry"><div class="const-name">allowedOrigins</div><div class="const-type">Set&lt;string&gt;</div><div class="const-desc">Valid origins: <code>Servidor</code>, <code>Red</code>, <code>Aplicacion</code>, <code>IoT</code>, <code>Usuario</code></div></div>
+      <div class="const-entry"><div class="const-name">allowedSeverity</div><div class="const-type">Set&lt;string&gt;</div><div class="const-desc">Valid severity levels: <code>Baja</code>, <code>Media</code>, <code>Alta</code>, <code>Critica</code></div></div>
+      <div class="const-entry"><div class="const-name">allowedPriority</div><div class="const-type">Set&lt;string&gt;</div><div class="const-desc">Valid priority levels: <code>Baja</code>, <code>Media</code>, <code>Alta</code>, <code>Critica</code></div></div>
+      <div class="const-entry"><div class="const-name">allowedCategory</div><div class="const-type">Set&lt;string&gt;</div><div class="const-desc">Valid categories: <code>General</code>, <code>Red</code>, <code>Aplicacion</code>, <code>Seguridad</code>, <code>Hardware</code></div></div>
+      <div class="const-entry"><div class="const-name">allowedTeams</div><div class="const-type">Set&lt;string&gt;</div><div class="const-desc">Valid teams: <code>N1</code>, <code>N2</code>, <code>Infra</code>, <code>OT</code></div></div>
+ 
+      <div style="height:20px"></div>
+      <div class="block-label" style="margin-bottom:12px">Functions</div>
+ 
+      <div class="fn-entry">
+        <div class="fn-header">
+          <span class="fn-badge private">private</span>
+          <span class="fn-name">sanitize</span>
+          <span class="fn-signature">(text: *) → string</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Trims and collapses internal whitespace. Safely converts non-string inputs to empty string via <code>String()</code>.</p>
+          <div class="returns-block">
+            <div class="block-label">Returns</div>
+            <div class="returns-row">
+              <div class="returns-type">string</div>
+              <div class="returns-desc">Sanitized string — no leading/trailing spaces, no double spaces.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="fn-entry" id="fn-validateIncidentInput">
+        <div class="fn-header">
+          <span class="fn-badge exported">export</span>
+          <span class="fn-name">validateIncidentInput</span>
+          <span class="fn-signature">(formData: FormData) → Object</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Validates incident form data submitted by a reporter. Checks required fields, minimum lengths, and allowed enum values. Returns on the first error found.</p>
+          <div class="params-block">
+            <div class="block-label">Parameters</div>
+            <div class="param-row">
+              <div class="param-name">formData</div>
+              <div class="param-type">FormData</div>
+              <div class="param-desc">Raw FormData from the incident creation form.</div>
+            </div>
+          </div>
+          <div class="returns-block">
+            <div class="block-label">Returns</div>
+            <div class="returns-row">
+              <div class="returns-type">Object</div>
+              <div class="returns-desc"><code>&#123; ok: true, value &#125;</code> on success · <code>&#123; ok: false, message &#125;</code> on error.</div>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="block-label">Example</div>
+            <pre><code>const result = validateIncidentInput(formData);
+if (!result.ok) {
+  showError(result.message);
+} else {
+  createIncident(result.value);
+}</code></pre>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="fn-entry" id="fn-normalizeImportedIncident">
+        <div class="fn-header">
+          <span class="fn-badge exported">export</span>
+          <span class="fn-name">normalizeImportedIncident</span>
+          <span class="fn-signature">(raw: Object) → Object | null</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Normalizes a raw imported incident object. Applies defaults for optional fields and returns <code>null</code> for invalid required fields — callers silently skip nulls during bulk import.</p>
+          <div class="params-block">
+            <div class="block-label">Parameters</div>
+            <div class="param-row"><div class="param-name">raw.titulo</div><div class="param-type">string</div><div class="param-desc">Incident title.</div></div>
+            <div class="param-row"><div class="param-name">raw.descripcion</div><div class="param-type">string</div><div class="param-desc">Incident description.</div></div>
+            <div class="param-row"><div class="param-name">raw.origen</div><div class="param-type">string</div><div class="param-desc">Must be in <code>allowedOrigins</code>.</div></div>
+            <div class="param-row"><div class="param-name">raw.severidad</div><div class="param-type">string</div><div class="param-desc">Must be in <code>allowedSeverity</code>.</div></div>
+            <div class="param-row"><div class="param-name">raw.categoria</div><div class="param-type">string?</div><div class="param-desc">Defaults to <code>"General"</code>.</div></div>
+            <div class="param-row"><div class="param-name">raw.prioridad</div><div class="param-type">string?</div><div class="param-desc">Defaults to <code>"Media"</code>.</div></div>
+            <div class="param-row"><div class="param-name">raw.equipo</div><div class="param-type">string?</div><div class="param-desc">Defaults to <code>"N1"</code> if invalid.</div></div>
+            <div class="param-row"><div class="param-name">raw.estado</div><div class="param-type">string?</div><div class="param-desc">Defaults to <code>"Nueva"</code> if unrecognized.</div></div>
+          </div>
+          <div class="returns-block">
+            <div class="block-label">Returns</div>
+            <div class="returns-row">
+              <div class="returns-type">Object | null</div>
+              <div class="returns-desc">Normalized incident ready for storage, or <code>null</code> if required fields are invalid.</div>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="block-label">Example</div>
+            <pre><code>const normalized = normalizeImportedIncident(rawObject);
+if (normalized) incidents.push(normalized);</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <div class="section-divider"></div>
+ 
+    <!-- MODULE: main -->
+    <section class="module-section" id="module-main">
+      <div class="module-header">
+        <div class="module-icon">UI</div>
+        <div class="module-title">
+          <h2>main</h2>
+          <p>UI utility functions. Handles navigation menu toggling and copy-to-clipboard. Loaded on all application pages.</p>
+          <span class="module-path">scripts/main.js</span>
+        </div>
+      </div>
+ 
+      <div class="block-label" style="margin-bottom:12px">Behaviours</div>
+ 
+      <div class="fn-entry" id="fn-menuToggle">
+        <div class="fn-header">
+          <span class="fn-badge">listener</span>
+          <span class="fn-name">Mobile navigation toggle</span>
+          <span class="fn-signature">#menuBtn click → #mainNav.open</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Toggles the <code>open</code> CSS class on <code>#mainNav</code> when <code>#menuBtn</code> is clicked. Does nothing if either element is absent from the DOM.</p>
+        </div>
+      </div>
+ 
+      <div class="fn-entry" id="fn-copyButtons">
+        <div class="fn-header">
+          <span class="fn-badge">listener</span>
+          <span class="fn-name">Copy-to-clipboard buttons</span>
+          <span class="fn-signature">.copy-btn click → clipboard</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Initializes copy behaviour for all <code>.copy-btn</code> elements. Reads the text from <code>data-copy</code>. Shows "Copiado" for 1.2 s as feedback. Silently fails if Clipboard API is unavailable.</p>
+          <div class="example-block">
+            <div class="block-label">HTML Usage</div>
+            <pre><code>&lt;button class="copy-btn" data-copy="npm install"&gt;Copy&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <div class="section-divider"></div>
+ 
+    <!-- MODULE: docs/app -->
+    <section class="module-section" id="module-docs-app">
+      <div class="module-header">
+        <div class="module-icon">DOC</div>
+        <div class="module-title">
+          <h2>docs/app</h2>
+          <p>Scroll-spy TOC controller for the documentation page. Highlights the active sidebar link as the user scrolls.</p>
+          <span class="module-path">DOCUMENTATION/app.js</span>
+        </div>
+      </div>
+ 
+      <div class="block-label" style="margin-bottom:12px">Functions</div>
+ 
+      <div class="fn-entry" id="fn-buildToc">
+        <div class="fn-header">
+          <span class="fn-badge">function</span>
+          <span class="fn-name">buildToc</span>
+          <span class="fn-signature">(tab: string) → Array&lt;HTMLAnchorElement&gt;</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Builds TOC anchor links in <code>#docToc</code> for every <code>&lt;h2&gt;</code> found in panels matching the given tab. Returns empty array if no container is found.</p>
+          <div class="params-block">
+            <div class="block-label">Parameters</div>
+            <div class="param-row">
+              <div class="param-name">tab</div>
+              <div class="param-type">string</div>
+              <div class="param-desc">Tab identifier, e.g. <code>"funcional"</code>.</div>
+            </div>
+          </div>
+          <div class="returns-block">
+            <div class="block-label">Returns</div>
+            <div class="returns-row">
+              <div class="returns-type">HTMLAnchorElement[]</div>
+              <div class="returns-desc">Generated anchor elements.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="fn-entry" id="fn-applyTab">
+        <div class="fn-header">
+          <span class="fn-badge">function</span>
+          <span class="fn-name">applyTab</span>
+          <span class="fn-signature">(tab: string) → void</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Switches the active documentation tab. Updates button states, shows/hides panels, rebuilds TOC, and scrolls to top.</p>
+          <div class="example-block">
+            <div class="block-label">Example</div>
+            <pre><code>applyTab("criterios");</code></pre>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="fn-entry" id="fn-setActiveLink">
+        <div class="fn-header">
+          <span class="fn-badge">function</span>
+          <span class="fn-name">setActiveLink</span>
+          <span class="fn-signature">() → void</span>
+        </div>
+        <div class="fn-body">
+          <p class="fn-description">Updates the active TOC link based on scroll position. Highlights the link whose section is nearest the top of the viewport. Called on every scroll event and on load.</p>
+        </div>
+      </div>
+    </section>
+ 
+  </main>
+</div>
+ 
+<footer class="footer">
+  <div class="footer-row">
+    <span>SmartLog Monitor · API Reference · v1.0.0</span>
+    <span>Generated from JSDoc · MIT License</span>
+  </div>
+</footer>
+ 
+<script>
+  const sections = document.querySelectorAll('.module-section');
+  const sidebarModules = document.querySelectorAll('.sidebar-module');
+ 
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        sidebarModules.forEach(l => l.classList.remove('active'));
+        const match = document.querySelector(`.sidebar-module[href="#${e.target.id}"]`);
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -80% 0px' });
+ 
+  sections.forEach(s => obs.observe(s));
+</script>
+ 
+</body>
+</html>
